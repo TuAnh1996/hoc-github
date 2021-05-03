@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <!-- awesome  -->
+    <!-- awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css"
+        integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="display-4">
+                    学生管理
+
+                </h3>
+                <div class="form-group">
+                    <p>学籍</p>
+                    <input id="maSinhVien" class="form-control" placeholder="例：１９３２８０２">
+                    <span id="error_maSinhVien_min_max_length" class="text text-danger"></span>
+                    <span id="error_maSinhVien_all_number" class="text text-danger"></span>
+                    <span id="error_maSinhVien_required" class="text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p>氏名</p>
+                    <input  id="tenSinhVien" class="form-control"　placeholder="例：１９３２８０２">
+                    <span id="error_tenSinhVien_required" class="text text-danger"></span>
+                    <span id="error_tenSinhVien_laChu" class="text text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <p>国籍</p>
+                    <select class="form-control" id="loaiSinhVien">
+                    <option >日本</option>
+                    <option>ベトナム</option>
+                    <option>中国</option>
+                    <option>ネパール</option>
+                    <option>韓国</option>
+                    <option>タイ</option>
+                    <option>アメリカ</option>
+                    error_diemLapTrinh_required<option>モンゴル</option>
+                    <option>ヨロッパ</option>
+                    
+                </select>
+                   
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                      <div class="col-3">
+                          <p>日本語</p>
+                          <input type="text"id="diemToan" class="form-control">
+                          <span id="error_diemToan_required" class="text text-danger"></span>
+                          <span id="error_diemToan_all_number" class="text text-danger"></span>
+                          <span id="error_diemToan_min_max_length" class="text text-danger"></span>
+
+
+                      </div>
+                      <div class="col-3">
+                        <p>英語</p>
+                        <input type="text"id="diemLy" class="form-control">
+                        <span id="error_diemLy_required" class="text text-danger"></span>
+                        <span id="error_diemLy_all_number" class="text text-danger"></span>
+                        <span id="error_diemLy_min_max_length" class="text text-danger"></span>
+
+
+
+                    </div>
+                    <div class="col-3">
+                        <p>Webサイト制作</p>
+                        <input type="text"id="diemHoa" class="form-control">
+                        <span id="error_diemHoa_required" class="text text-danger"></span>
+                        <span id="error_diemHoa_all_number" class="text text-danger"></span>
+                        <span id="error_diemHoa_min_max_length" class="text text-danger"></span>
+
+                    </div>
+                    <div class="col-3">
+                        <p>Webアプリ開発</p>
+                        <input type="text"id="diemLapTrinh" class="form-control">
+                        <span id="error_diemLapTrinh_required" class="text text-danger"></span>
+                        <span id="error_diemLapTrinh_all_number" class="text text-danger"></span>
+                        <span id="error_diemLapTrinh_min_max_length" class="text text-danger"></span>
+
+
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="form-group">
+                    <p>出席率(%）</p>
+                    <input id="diemRenLuyen" class="form-control"　placeholder="例：80">
+                    <span id="error_diemRenLuyen_required" class="text text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <button id="btnXacNhan" class="btn btn-success">確認</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <h3 class="text-center display-4">
+                   学生情報
+                </h3>
+                <p>氏名 :
+                    <span id="txtTenSinhVien" style="font-weight: bold; "></span>
+                </p>
+                <p>学籍 :
+                    <span id="txtMaSinhVien" style="font-weight: bold; "></span>
+                </p>
+                <p>国籍 :
+                    <span id="txtLoaiSinhVien" style="font-weight: bold; "></span>
+                </p>
+                <p>平均点:
+                    <span id="txtDiemTrungBinh" style="font-weight: bold; "></span>
+                </p>
+                <p>分類:
+                    <span id="txtXepLoai" style="font-weight: bold; "></span>
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./index.js"></script> -->
+    <script src="laptrinhhuongdtuong/ktraHopLe.js"></script>
+    <script src="./laptrinhhuongdtuong/sinhVien.js"></script>
+    <script src="laptrinhhuongdtuong/doiTuongSV.js"></script>
+   
+</body>
+
+</html>
